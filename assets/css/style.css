@@ -11,7 +11,7 @@ body {
         "enter enter leave leave"
         "userlist userlist chat chat"
         "userlist userlist chat chat"
-        "userlist userlist fight fight";
+        "userlist userlist chat chat";
     /* font-family: 'Chakra Petch', 'sans-serif'; */
 }
 
@@ -107,18 +107,3 @@ body {
         flex-basis: 95%;
     }
 
-#fight{
-    grid-area: fight;
-    background-color: purple;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-    #fight *{
-        font-size: 3.5vw;
-        font-family: 'Chakra Petch', 'sans-serif';
-    }
-    #fight:hover{
-        border: black solid .25vw;
-    }

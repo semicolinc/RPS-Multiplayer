@@ -18,7 +18,8 @@ $(document).ready(function() {
         var ref = database.ref('players');
         var userKey = localStorage.getItem("key");
         var userRef = firebase.database().ref('/players/'+userKey);
-        const playerList = firebase.database().ref().child('players');
+
+        // Code puts user unique ID into green waiting room when Enter is pressed
 
         $("#enter").on('click', function(){
             if (userKey == null){
@@ -27,22 +28,30 @@ $(document).ready(function() {
                 }
                 ref.push(player);
             };
+            database.ref().child('players').on("child_added", function(snapshot) {
+                let key = snapshot.key;
+                localStorage.setItem("key", key);
+                userKey = localStorage.getItem("key");
+                userRef = firebase.database().ref('/players/'+userKey); 
+            });
         });
 
-        playerList.on("child_added", snap => {
-            let key = snap.key;
-            localStorage.setItem("key", key);
+        database.ref().child('players').on("child_added", function(snapshot) {
+            let key = snapshot.key;
             let p = $("<div><div>").text(key);
             console.log(key);
             $("#userbox").append(p);
-            userKey = localStorage.getItem("key");
         });
+
+        //This function destroys localstorage and database storage to remove user from waiting list
         
         $("#leave").on('click', function(){
             userRef.remove();
             localStorage.clear();
             alert("Reload the page to fully process your absence.");
         });
+
+        //When at least two users are in the waiting room at the same time, they are put into a game of rock paper scissors.
     };
     main();
 });
