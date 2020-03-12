@@ -1,0 +1,124 @@
+body, html{
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25% 25%;
+    grid-template-areas:
+        "enter enter leave leave"
+        "userlist userlist chat chat"
+        "userlist userlist chat chat"
+        "userlist userlist fight fight";
+    /* font-family: 'Chakra Petch', 'sans-serif'; */
+}
+
+#enter{
+    grid-area: enter;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+    #enter *{
+        font-size: 2.8vw;
+        font-family: 'Chakra Petch', 'sans-serif';
+    }
+    #enter:hover{
+        border: black solid .1vw;
+    }
+
+#leave{
+    grid-area: leave;
+    background-color: orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+    #leave *{
+        font-size: 2.8vw;
+        font-family: 'Chakra Petch', 'sans-serif';
+    }
+    #leave:hover{
+        border: black solid .1vw;
+    }
+
+#chat{
+    grid-area: chat;
+    background-color: lightskyblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+    #chatbox{
+        height: 95%;
+        flex-basis: 95%;
+        align-self: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+    #chathistory{
+        height: 85%;
+        width: 100%;
+    }
+    #chatcontainer{
+        border-top: .1vw black solid;
+        height: 15%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+        #chatInput{
+            height: 10%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5vw;
+            margin: 1%;
+        }
+        #chatInput *{
+            flex-grow: 1;
+            font-family: 'Chakra Petch', 'sans-serif';
+        }
+        input#chattype{
+            border-radius: 1vw;
+        }
+        input#chattype:focus{
+            outline: none;
+        }
+
+#userlist{
+    grid-area: userlist;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    #userbox{
+        height: 95%;
+        flex-basis: 95%;
+    }
+
+#fight{
+    grid-area: fight;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+    #fight *{
+        font-size: 3.5vw;
+        font-family: 'Chakra Petch', 'sans-serif';
+    }
+    #fight:hover{
+        border: black solid .25vw;
+    }

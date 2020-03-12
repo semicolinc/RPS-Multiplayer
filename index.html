@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel = "stylesheet" href = "assets/css/style.css">
+    <link rel = "stylesheet" href = "assets/css/reset.css">
+    <meta name = "viewport" content = "width=device-width, initial-scale = 1">
+    <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
+    <title>RPS Multiplayer</title>
+</head>
+
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-database.js"></script>
+    <script src = "assets/javascript/code.js"></script>
+    <div id = "enter" class = "able">
+        <span>Enter Game</span>
+    </div>
+    <div id = "leave">
+        <span>Leave Game</div>
+    </div>
+    <span id = "chat">
+        <div id = "chatbox">
+            <div id = "chathistory"></div>
+            <div id = "chatcontainer">
+                <form id = "chatInput">
+                    <label id = "chatLabel" for="chattype">Global Chat</label>
+                    <input type = "text" id = "chattype" name = "chatcontent"><br>
+                </form>
+            </div>
+        </div>
+    </span>
+    <span id = "userlist">
+        <div id = "userbox"></div>
+    </span>
+    <div id = "fight">
+        <span>Fight!</span>
+    </div>
+</body>
