@@ -16,7 +16,7 @@ $(document).ready(function() {
         // Initialize variables
         var database = firebase.database();
         var ref = database.ref('players');
-        var userKey = localStorage.getItem("key");
+        var userKey = null;
         var userRef = firebase.database().ref('/players/'+userKey);
 
         // Code puts user unique ID into green waiting room when Enter is pressed
